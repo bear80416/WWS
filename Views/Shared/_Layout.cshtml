@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - myspace</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/Home/Layout.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="menu-box">
+        <input type="checkbox" name="" id="menu-control">
+        <label class="menu" for="menu-control">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <nav class="info-group p-4 overflow-hidden">
+            <div class="info-items col-md-12 col">
+                <div id="selfie" class="selfie">
+                    <img class="" src="https://raw.githubusercontent.com/bear80416/HenryWuCompany/master/HenryWuCompany/Assets/Img/Index/1.jpg" alt="">
+                </div>
+                <div class="text-center">
+                    <h5 class="p-3">Henry Wu 吳宇綸</h5>
+                    <div class="social p-1 gray">
+                        <div class="row justify-content-center">
+                            <img class="mx-3" width="30" height="30" src="https://raw.githubusercontent.com/bear80416/HenryWuCompany/master/HenryWuCompany/Assets/Img/Index/Social/036-facebook.png" alt="facebook">
+                            <img class="mx-3" width="30" height="30" src="https://raw.githubusercontent.com/bear80416/HenryWuCompany/master/HenryWuCompany/Assets/Img/Index/Social/029-instagram.png" alt="instagram">
+                            <img class="mx-3" width="30" height="30" src="https://raw.githubusercontent.com/bear80416/HenryWuCompany/master/HenryWuCompany/Assets/Img/Index/Social/027-linkedin.png" alt="linkedin">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ---- #region ----------連結-------------- -->
+            <div class="info-items">
+                <div class="col p-2 mt-5">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="mb-0">
+                                <a href="~/Views/Home/Index.cshtml" class="text-left">
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-house-fill mx-3"
+                                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                              d="M8 3.293l6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
+                                        <path fill-rule="evenodd"
+                                              d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
+                                    </svg>Home
+                                </a>
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="mb-0">
+                                <a href="#" class="text-left">
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-code-slash mx-3"
+                                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                              d="M4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0zm-.999-3.124a.5.5 0 0 1 .33.625l-4 13a.5.5 0 0 1-.955-.294l4-13a.5.5 0 0 1 .625-.33z" />
+                                    </svg>Projects
+                                </a>
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="mb-0">
+                                <a href="~/Views/Home/About.cshtml" class="text-left">
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16"
+                                         class="bi bi-person-square mx-3" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                              d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                                        <path fill-rule="evenodd"
+                                              d="M2 15v-1c0-1 1-4 6-4s6 3 6 4v1H2zm6-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                    </svg>About
+                                </a>
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="mb-0">
+                                <a href="~/Views/Home/Blog.cshtml" class="text-left">
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16"
+                                         class="bi bi-journal-text mx-3" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
+                                        <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z" />
+                                        <path fill-rule="evenodd"
+                                              d="M5 10.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z" />
+                                    </svg>Blog
+                                </a>
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="mb-0">
+                                <a href="~/Views/Home/Contact.cshtml" class="text-left">
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16"
+                                         class="bi bi-envelope-fill mx-3" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                              d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z" />
+                                    </svg>Contact
+                                </a>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+  
+    <!-- ---- #endregion ----------連結-------------- -->
+    <!-- #region -----------------右上-------------------- -->
+
+    <div class="index-top-left p-1">
+        <div class="itl-master">
+            <img src="https://raw.githubusercontent.com/bear80416/HenryWuCompany/master/HenryWuCompany/Assets/Img/ice-cream/png/005-popsicle.png" alt="" width="50">
+        </div>
+
+        <div class="itl-group">
+            <a href=""><img class="im-1 mx-3" width="30" src="https://raw.githubusercontent.com/bear80416/HenryWuCompany/master/HenryWuCompany/Assets/Img/Index/Social/036-facebook.png" alt="facebook"></a>
+            <a href=""><img class="im-2 mx-3" width="30" src="https://raw.githubusercontent.com/bear80416/HenryWuCompany/master/HenryWuCompany/Assets/Img/Index/Social/029-instagram.png" alt="instagram"></a>
+            <img class="im-3 mx-3" width="30" src="https://raw.githubusercontent.com/bear80416/HenryWuCompany/master/HenryWuCompany/Assets/Img/Index/Social/027-linkedin.png" alt="linkedin">
+        </div>
+
+        <div class="itl-info bg-white rounded-pill">
+            <button class="btn">Login</button>
+        </div>
+    </div>
+  
+            @RenderBody()
+
+
+
+    <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/Home/Layout.js"></script> 
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
