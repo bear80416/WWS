@@ -1,8 +1,10 @@
 * {
     list-style: none;
     font-family: 'Noto Sans TC', sans-serif;
-    box-shadow:none;
+    box-shadow: none;
+    text-decoration-line: none;
 }
+
 /*------ #region -------------效果----------------------------*/
 @keyframes bounceIn {
     0% {
@@ -59,11 +61,12 @@
 
 .page-title {
     margin-top: 70px;
-    margin-bottom:20px;
+    margin-bottom: 20px;
     color: white;
-    font-size:xx-small;
+    font-size: xx-small;
     animation: bounceIn 1s;
 }
+
 .menu-box .menu {
     position: fixed;
     width: 50px;
@@ -79,19 +82,19 @@
     background-color: #ffc107ad;
 }
 
-    .menu-box .menu span {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        border: 1px solid rgb(0, 0, 0);
-        background-color: rgb(0, 0, 0);
-        margin: auto;
-        width: 32px;
-        height: 1px;
-        transition: .5s;
-    }
+.menu-box .menu span {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border: 1px solid rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0);
+    margin: auto;
+    width: 32px;
+    height: 1px;
+    transition: .5s;
+}
 
 #menu-control {
     display: none;
@@ -99,28 +102,29 @@
 
 /* --------------------------------------- */
 
-    @media screen and (max-width: 768px) {
-        .menu-box nav {
-            margin-top:80px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            height: calc(100vh);
-            bottom: 0;
-            left: -100%;
-            background-color: rgb(255, 255, 255);
-            transition: left 2s;
-            overflow: auto;
-            z-index: 98;
-            border-left: 1px solid rgba(0, 0, 0, 0.151);
-        }
-
-        #menu-control:checked ~ .menu {
-            background-color: #ffc107;
-            border-radius: 50%;
-            left: 4%;
-        }
+@media screen and (max-width: 768px) {
+    .menu-box nav {
+        margin-top: 80px;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        height: calc(100vh);
+        bottom: 0;
+        left: -100%;
+        background-color: rgb(255, 255, 255);
+        transition: left 2s;
+        overflow: auto;
+        z-index: 98;
+        border-left: 1px solid rgba(0, 0, 0, 0.151);
     }
+
+    #menu-control:checked~.menu {
+        background-color: #ffc107;
+        border-radius: 50%;
+        left: 4%;
+    }
+}
+
 @media screen and (min-width: 966px) {
     .menu-box nav {
         position: fixed;
@@ -136,7 +140,7 @@
         border-left: 1px solid rgba(0, 0, 0, 0.151);
     }
 
-    #menu-control:checked ~ .menu {
+    #menu-control:checked~.menu {
         background-color: #ffc107;
         border-radius: 50%;
         left: 25%;
@@ -144,134 +148,124 @@
 }
 
 
-    .menu-box nav a {
-        display: inline-block;
-        text-decoration: none;
-        padding: 10px 20px;
-        color: rgb(0, 0, 0);
-    }
+.menu-box nav a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 20px;
+    color: rgb(0, 0, 0);
+}
 
 
 
 
-    #menu-control:checked ~ nav {
-        left: 0;
-    }
+#menu-control:checked~nav {
+    left: 0;
+}
 
-    /* ----------------漢堡---------------- */
-    .menu-box .menu span:first-child {
-        transform: translateY(-6px);
-    }
+/* ----------------漢堡---------------- */
+.menu-box .menu span:first-child {
+    transform: translateY(-6px);
+}
 
-    .menu-box .menu span:last-child {
-        transform: translateY(6px);
-    }
-
-  
-
-        #menu-control:checked ~ .menu span:first-child {
-            transform: translateY(0px) rotate(45deg);
-        }
-
-        #menu-control:checked ~ .menu span:last-child {
-            transform: translateY(0px) rotate(135deg);
-        }
-
-        #menu-control:checked ~ .menu span:nth-child(2) {
-            display: none;
-        }
-
-    /* ----------------漢堡---------------- */
-
-
-    .selfie {
-        overflow: hidden;
-        width: 10vw;
-        height: 10vw;
-        border-radius: 50%;
-        position: relative;
-        margin: auto;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
-    }
-
-        .selfie img {
-            width: 100%;
-            position: absolute;
-        }
-
-    .gray {
-        filter: grayscale(60%);
-    }
-
-    .card {
-        border: none;
-        border-radius: 0px;
-    }
-
-    .card-header {
-        background-color: rgb(255, 255, 255);
-        border-bottom: none;
-    }
-
-        .card-header:first-child {
-            border-radius: 0px;
-        }
-
-        .card-header:hover {
-            background-color: rgb(233, 233, 233);
-            border-left: 20px solid #17a2b8;
-            transition: .3s;
-        }
-
- 
-
-    /*  ---------------------------------------------------- */
+.menu-box .menu span:last-child {
+    transform: translateY(6px);
+}
 
 
 
-    /*-- #region ----------右上------------------*/
+#menu-control:checked~.menu span:first-child {
+    transform: translateY(0px) rotate(45deg);
+}
 
-    .index-top-left {
-        position: relative;
-        margin: auto;
-        z-index: 100;
-    }
+#menu-control:checked~.menu span:last-child {
+    transform: translateY(0px) rotate(135deg);
+}
 
-    .itl-master {
-        position: absolute;
-        margin: auto;
-        top: 20px;
-        right: 20px;
-    }
+#menu-control:checked~.menu span:nth-child(2) {
+    display: none;
+}
 
-    [class^=im-] {
-        position: absolute;
-        margin: auto;
-        top: 35px;
-        transition: .3s;
-        filter: invert(100%);
-        opacity: .8;
-    }
+/* ----------------漢堡---------------- */
 
-    .index-top-left .im-1 {
-        right: 230px;
-    }
 
-    .index-top-left .im-2 {
-        right: 180px;
-    }
+.selfie {
+    overflow: hidden;
+    width: 15vw;
+    height: 15vw;
+    border-radius: 50%;
+    position: relative;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
 
-    .index-top-left .im-3 {
-        right: 280px;
-    }
+.selfie img {
+    width: 100%;
+    position: absolute;
+}
 
-    .itl-info {
-        position: absolute;
-        top: 30px;
-        right: 90px;
-    }
+.gray {
+    filter: grayscale(60%);
+}
 
-    /*-- #endregion ----------右上------------------*/
+.list-group-item{
+    border-top: none;
+}
+
+.list-group-item:hover {
+    background-color: rgb(233, 233, 233);
+    border-left: 20px solid #17a2b8;
+    transition: .3s;
+}
+
+
+
+/*  ---------------------------------------------------- */
+
+
+
+/*-- #region ----------右上------------------*/
+
+.index-top-left {
+    position: relative;
+    margin: auto;
+    z-index: 100;
+}
+
+.itl-master {
+    position: absolute;
+    margin: auto;
+    top: 20px;
+    right: 20px;
+}
+
+[class^=im-] {
+    position: absolute;
+    margin: auto;
+    top: 35px;
+    transition: .3s;
+    filter: invert(100%);
+    opacity: .8;
+}
+
+.index-top-left .im-1 {
+    right: 230px;
+}
+
+.index-top-left .im-2 {
+    right: 180px;
+}
+
+.index-top-left .im-3 {
+    right: 280px;
+}
+
+.itl-info {
+    position: absolute;
+    top: 30px;
+    right: 90px;
+}
+
+/*-- #endregion ----------右上------------------*/

@@ -1,0 +1,147 @@
+﻿@{
+ViewData["Title"] = "作品";
+}
+
+@section TopCss{
+<style>
+    .nav-pills .nav-link.active,
+    .nav-pills .show>.nav-link {
+        background-color: #ffc107;
+        color: #111111;
+    }
+
+    a {
+        color: #000000;
+        text-decoration-line: none;
+    }
+</style>
+}
+
+<div class="container-md bg-white p-3">
+
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
+                        aria-controls="pills-home" aria-selected="true">JavaScript</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
+                        aria-controls="pills-profile" aria-selected="false">電商專題</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab"
+                        aria-controls="pills-contact" aria-selected="false">網頁切版</a>
+                </li>
+            </ul>
+        </div>
+        <div class="tab-content col-md-12" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                <div class="row">
+                   <div class="col-md-3 col-6"><a href="@Url.ActionLink("GuessTheNumber","Projects")"> 
+                        <div class="pp bg-warning">
+                            <img src="https://i.gyazo.com/7111a13c94f389a5a7012f91f57bde7b.png" class="card-img-top"
+                                alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">1A2B</h5>
+                            
+                            <p class="card-text"><small class="text-muted">Last updated 2020/10/15</small></p>
+                        </div></a>
+                    </div>
+                   <div class="col-md-3 col-6"> <a href="@Url.ActionLink("Apple","Projects")">
+                        <div class="pp bg-warning">
+                            <img src="https://i.gyazo.com/171c77cb40e5f762dea2003a25533715.png" class="card-img-top"
+                                alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Apple</h5>
+
+                            <p class="card-text"><small class="text-muted">Last updated 2020/10/15</small></p>
+                        </div></a>
+                    </div>
+                   <div class="col-md-3 col-6"><a href="@Url.ActionLink("Calendar","Projects")"> 
+                        <div class="pp bg-warning">
+                            <img src="https://i.gyazo.com/4c9ac9b2ef5b7135164df45503c54341.png" class="card-img-top"
+                                alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">行事曆</h5>
+                            
+                            <p class="card-text"><small class="text-muted">Last updated 2020/10/15</small></p>
+                        </div></a>
+                    </div>
+                    <div class="col-md-3 col-6"><a href="@Url.ActionLink("Calculator","Projects")">
+                        <div class="pp bg-warning">
+                            <img src="https://i.gyazo.com/8dd5f1459b339f9b6782861023fbbfda.png" class="card-img-top"
+                                alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">計算機</h5>
+                            
+                            <p class="card-text"><small class="text-muted">Last updated 2020/10/15</small></p>
+                        </div></a>
+                    </div>
+                   <div class="col-md-3 col-6"><a href="@Url.ActionLink("Pizza","Projects")"> 
+                        <div class="pp bg-warning">
+                            <img src="https://i.gyazo.com/3da64c1c420681908fb47f42b59b1b4a.png" class="card-img-top"
+                                alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Pizza</h5>
+                            
+                            <p class="card-text"><small class="text-muted">Last updated 2020/10/15</small></p>
+                        </div></a>
+                    </div>
+                    <div class="col-md-3 col-6"><a href="@Url.ActionLink("Puzzle","Projects")">
+                        <div class="pp bg-warning">
+                            <img src="https://i.gyazo.com/ddd6a5d8eb0629169943f0b3bea2304d.png" class="card-img-top"
+                                alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Puzzle 拼圖</h5>
+                            
+                            <p class="card-text"><small class="text-muted">Last updated 2020/10/15</small></p>
+                        </div></a>
+                    </div>
+                    <div class="col-md-3 col-6"><a href="@Url.ActionLink("Statistics","Projects")">
+                        <div class="pp bg-warning">
+                            <img src="https://i.gyazo.com/580a2fa31dc306241401a418449db823.png" class="card-img-top"
+                                alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">統計 Chart.js</h5>
+                            
+                            <p class="card-text"><small class="text-muted">Last updated 2020/10/15</small></p>
+                        </div></a>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                <div class="row">
+                   <div class="col-md-3 col-6"><a href="https://perfume.azurewebsites.net/">
+                        <div class="pp bg-warning">
+                            <img src="https://i.gyazo.com/3efa3946a5934496fd8d4239ed3b2d99.png" class="card-img-top"
+                                alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Floris | 香水網站</h5>
+                            
+                            <p class="card-text"><small class="text-muted">Last updated 2020/10/15</small></p>
+                        </div></a>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                <div class="row">
+                    <div class="col-md-3 col-6"> <img class="w-100" src="https://fakeimg.pl/300x300/000300"> </div>
+                    <div class="col-md-3 col-6"> <img class="w-100" src="https://fakeimg.pl/300x300/000300"> </div>
+                    <div class="col-md-3 col-6"> <img class="w-100" src="https://fakeimg.pl/300x300/000300"> </div>
+                    <div class="col-md-3 col-6"> <img class="w-100" src="https://fakeimg.pl/300x300/000300"> </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,296 @@
+﻿
+@{
+    ViewData["Title"] = "統計 | Statistics";
+}
+
+@section TopCss{
+    <style>
+        .container .row .loading {
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+        }
+
+        .container .row .error {
+            font-size: 60px;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+    </style>
+}
+
+@section EndJs{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg==" crossorigin="anonymous"></script>
+<script>
+        /*     var chartData = {
+            labels: ['美國', '日本', '泰國', '琉球', '紐西蘭', '澳洲'],
+            data: [8, 22, 13, 15, 12, 17, 21]
+        } */
+        var apiUrl =
+            'https://raw.githubusercontent.com/bear80416/bearhenry.github.io/master/statistics/data/ChartData.json';
+        var failapiUrl =
+            'https://raw.githubusercontent.com/bear80416/bearhenry.github.io/master/statistics/data/ChartData1.json';
+
+        var ctx = document.getElementById('myChart');
+        var ctx2 = document.getElementById('myChart2');
+        var ctx3 = document.getElementById('myChart3');
+        var ctx4 = document.getElementById('myChart4');
+
+        var chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: [],
+                datasets: [{
+                    label: '旅遊行程投票',
+                    data: [],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+
+        var chart2 = new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: [],
+                datasets: [{
+                    label: '旅遊行程投票',
+                    data: [],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+
+        var chart3 = new Chart(ctx3, {
+            type: 'bar',
+            data: {
+                labels: [],
+                datasets: [{
+                    label: '旅遊行程投票',
+                    data: [],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+
+        var chart4 = new Chart(ctx4, {
+            type: 'bar',
+            data: {
+                labels: [],
+                datasets: [{
+                    label: '旅遊行程投票',
+                    data: [],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+
+        /* --1 */
+        $.ajax({
+                url: apiUrl,
+                method: "get",
+                dataType: "json",
+            })
+            .done(function (response) {
+                chart.data.labels = response.labels;
+                chart.data.datasets[0].data = response.data;
+                chart.update();
+            })
+            .fail(function () {
+                alert("wrong");
+            }).always(function () {
+                console.log('AJAX1完成');
+            });
+        /* --2 */
+        $.ajax({
+                url: failapiUrl,
+                method: "get",
+                dataType: "json",
+            })
+            .done(function (response) {
+                chart2.data.labels = response.labels;
+                chart2.data.datasets[0].data = response.data;
+                chart2.update();
+            })
+            .fail(function () {
+                $(".error").show();
+                console.log('先不要');
+            }).always(function () {
+                console.log('AJAX2完成');
+            });
+        /* --3 */
+        $.ajax({
+                url: apiUrl,
+                method: "get",
+                dataType: "json",
+            })
+            .done(function (response) {
+                let timeout = setTimeout(function () {
+                    chart3.data.labels = response.labels;
+                    chart3.data.datasets[0].data = response.data;
+                    chart3.update();
+                    $(".loading")[0].style.display = "none";
+                    clearTimeout(timeout);
+                }, 3000);
+            })
+            .fail(function () {
+                alert("wrong");
+            }).always(function () {
+                console.log('AJAX3完成');
+            });
+        /* --4 */
+        $.ajax({
+                url: apiUrl,
+                method: "get",
+                dataType: "json",
+            })
+            .done(function (response) {
+                chart4.data.labels = response.labels;
+                chart4.data.datasets[0].data = response.data;
+                chart4.update();
+                let timeout = setTimeout(function () {
+                    let newLabels = [
+                        '美國', '日本', '泰國', '琉球', '紐西蘭', '澳洲'
+                    ]
+                    let newData = [7, 10, 15, 7, 6, 3, 3];
+                    myChart4.data.labels = newLabels;
+                    myChart4.data.datasets[0].data = newData;
+                    myChart4.update();
+                    clearTimeout(timeout);
+                }, 3000);
+            })
+            .fail(function () {
+                alert("wrong");
+            }).always(function () {
+                console.log('AJAX4完成');
+            });
+</script>
+}
+
+<div class="container bg-white p-2">
+    <div class="row">
+        <div class="col-md-6">
+            <h4>資料載入：成功</h4>
+            <canvas id="myChart" width="400" height="200" class="chartjs-render-monitor"></canvas>
+        </div>
+        <div class="col-md-6">
+            <h4>資料載入：失敗</h4>
+            <canvas id="myChart2" width="400" height="200"></canvas>
+            <div class="error text-danger position-absolute">載入失敗</div>
+        </div>
+        <div class="col-md-6">
+            <h4>資料延遲載入：成功</h4>
+            <div class="spinner-border position-absolute loading text-warning" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+            <canvas id="myChart3" width="400" height="200"></canvas>
+        </div>
+        <div class="col-md-6">
+            <h4>資料更新</h4>
+            <canvas id="myChart4" width="400" height="200"></canvas>
+        </div>
+    </div>
+</div>

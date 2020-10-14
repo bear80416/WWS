@@ -1,0 +1,133 @@
+﻿
+@{
+    ViewData["Title"] = "計算機";
+}
+
+@section TopCss{
+
+    <style>
+        
+        .main .bg-dark {
+            background-color: #343a4062 !important;
+        }
+
+        .main .btn-dark {
+            background-color: #343a4057;
+            border-color: #343a4000;
+        }
+
+        body {
+            background-image: url('../../Assets/Img/Index/bg2.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+    </style>
+
+    }
+
+@section EndJs{
+    <script>
+          let ans = document.getElementById('answer');
+        let sum = '';
+
+
+        function clickSum(num) {
+            sum = sum + num;
+            ans.innerText = sum;
+        }
+
+        function zero(num) {
+            if (sum.length > 0 && num == 0) {
+                sum = sum + num;
+                ans.innerText = sum;
+            } else {
+                ans.innerText = '0';
+            }
+
+        }
+
+        function point(i) {
+
+            sum = sum + i;
+            ans.innerText = sum;
+
+        }
+
+        function getAns(i) {
+
+            sum = eval(sum);
+
+            ans.innerText = sum;
+
+
+        }
+
+        function reset() {
+            sum = '';
+            ans.innerText = '0'
+        }
+
+    </script>
+    }
+
+<div class="container cal">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-md-6 col-12 main mb-3">
+            <div class="col-md col-12 text-white mt-auto d-flex align-items-end flex-column bd-highlight bg-dark rounded">
+                <h1 class="mt-5 p-2 bd-highdark" id="answer">請輸入數字</h1>
+            </div>
+            <div class="col-md col-12 mt-3">
+                <div class="row">
+                    <button class="col btn btn-dark h1" onclick="reset()">AC</button>
+                </div>
+            </div>
+            <div class="col-md col-12">
+                <div class="row align-items-center bg-dark rounded">
+                    <div class="col-md col-9 btn-group-vertical">
+                        <div class="btn-group">
+                            <button class="btn btn-dark" onclick="clickSum(this.innerText)" id="one">1</button>
+                            <button class="btn btn-dark" onclick="clickSum(this.innerText)" id="two">2</button>
+                            <button class="btn btn-dark" onclick="clickSum(this.innerText)" id="three">3</button>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn btn-dark" onclick="clickSum(this.innerText)" id="four">4</button>
+                            <button class="btn btn-dark" onclick="clickSum(this.innerText)" id="five">5</button>
+                            <button class="btn btn-dark" onclick="clickSum(this.innerText)" id="six">6</button>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn btn-dark" onclick="clickSum(this.innerText)" id="seven">7</button>
+                            <button class="btn btn-dark" onclick="clickSum(this.innerText)" id="eight">8</button>
+                            <button class="btn btn-dark" onclick="clickSum(this.innerText)" id="nine">9</button>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn btn-dark" data-container="body"
+                                    data-toggle="popover" data-placement="bottom" data-content="冰淇淋好好吃喔~~">
+                                <img src="/computer/img/ice-cream.png" alt="" width="20">
+                            </button>
+                            <button class="btn btn-dark" onclick="zero(this.innerText)"
+                                    id="zero">
+                                0
+                            </button>
+                            <button class="btn btn-dark" onclick="point(this.innerText)"
+                                    id="point">
+                                .
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-3 p-0 btn-group-vertical">
+                        <button class="col btn btn-dark " onclick="clickSum(this.innerText)" id="plus">+</button>
+                        <button class="col btn btn-dark" onclick="clickSum(this.innerText)" id="less">-</button>
+                        <button class="col btn btn-dark" onclick="clickSum(this.innerText)" id="plus">*</button>
+                        <button class="col btn btn-dark" onclick="clickSum(this.innerText)" id="less">/</button>
+                        <button class="col btn btn-warning" onclick="getAns()">=</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+

@@ -1,0 +1,324 @@
+﻿
+@{
+    ViewData["Title"] = "拼圖 | Puzzle";
+}
+
+
+
+@section TopCss{
+    <style>
+        #imgChange {
+            height: 700px;
+        }
+
+        body {
+            margin: 10px;
+        }
+
+        table {
+            margin: 0 auto;
+        }
+
+        td {
+            padding: 15px;
+        }
+
+        #puzzle-area > div {
+            display: table-row;
+        }
+
+    [class^=Position] { 
+        display: table-cell; 
+                        width: 167px; 
+                        height: 168px; 
+                        border: .5px solid #ffffffc0; 
+                        background-image: url('https://raw.githubusercontent.com/bear80416/HenryWuCompany/master/HenryWuCompany//Assets/Img/Puzzle/Andrea2.jpg'); cursor: pointer; }
+
+        .Position1 {
+            background-position: left top;
+        }
+
+        .Position2 {
+            background-position: center top;
+        }
+
+        .Position3 {
+            background-position: right top;
+        }
+
+        .Position4 {
+            background-position: left center;
+        }
+
+        .Position5 {
+            background-position: center center;
+        }
+
+        .Position6 {
+            background-position: right center;
+        }
+
+        .Position7 {
+            background-position: left bottom;
+        }
+
+        .Position8 {
+            background-position: center bottom;
+        }
+
+        .Position9 {
+            background: white;
+            cursor: default;
+        }
+    </style>
+}
+
+@section EndJs{
+    <script>
+        var pone = document.getElementById('P11');
+        var ptwo = document.getElementById('P12');
+        var pthree = document.getElementById('P13');
+        var pfour = document.getElementById('P21');
+        var pfive = document.getElementById('P22');
+        var psix = document.getElementById('P23');
+        var pseven = document.getElementById('P31');
+        var peight = document.getElementById('P32');
+        var pnite = document.getElementById('P33');
+        var puzzleArea = document.getElementById('puzzle-area');
+        var startBtn = document.getElementById('startBtn');
+        var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+        function puzzleRandom() {
+
+
+            numbers.sort(function () {
+                return Math.random() - 0.5;
+            })
+
+            console.log(numbers);
+            pone.className = `Position${numbers[0]}`;
+            ptwo.className = `Position${numbers[1]}`;
+            pthree.className = `Position${numbers[2]}`;
+            pfour.className = `Position${numbers[3]}`;
+            pfive.className = `Position${numbers[4]}`;
+            psix.className = `Position${numbers[5]}`;
+            pseven.className = `Position${numbers[6]}`;
+            peight.className = `Position${numbers[7]}`;
+            pnite.className = `Position${numbers[8]}`;
+
+            console.log(pone.className);
+
+            startBtn.onclick = '';
+            startBtn.classList = 'btn btn-secondary disabled w-100 mb-5 mt-5';
+
+
+        }
+
+
+        /* function startGame() {
+            
+
+        } */
+
+        function winGame() {
+            if (pone.className == 'Position1' && ptwo.className == 'Position2' && pthree.className == 'Position3' &&
+                pfour.className == 'Position4' && pfive.className == 'Position5' && psix.className == 'Position6' &&
+                pseven.className == 'Position6' && pseven.className == 'Position7' && peight.className == 'Position8' &&
+                pnite.className == 'Position9') {
+                console.log('Win');
+
+                puzzleArea.innerHTML = `<div class="col-md-12 text-center align-items-center">
+                    <h1>闖關成功!</h1>
+                    <img src="../../Assets/Img/Puzzle/Andrea2.jpg" alt=""></div>`
+            }; startBtn.onclick = 'puzzleRandom()'; startBtn.classList = 'btn btn-warning w-100 mb-5 mt-5';
+        }
+
+        function pOne() {
+            if (ptwo.className == 'Position9') {
+                ptwo.className = pone.className;
+                pone.className = 'Position9';
+            }
+            if (pfour.className == 'Position9') {
+                pfour.className = pone.className;
+                pone.className = 'Position9';
+            }
+            winGame()
+        }
+
+        function pTwo() {
+            if (pone.className == 'Position9') {
+                pone.className = ptwo.className;
+                ptwo.className = 'Position9';
+            }
+            if (pthree.className == 'Position9') {
+                pthree.className = ptwo.className;
+                ptwo.className = 'Position9';
+            }
+            if (pfive.className == 'Position9') {
+                pfive.className = ptwo.className;
+                ptwo.className = 'Position9';
+            }
+            winGame()
+        }
+
+        function pThree() {
+            if (ptwo.className == 'Position9') {
+                ptwo.className = pthree.className;
+                pthree.className = 'Position9';
+            }
+            if (psix.className == 'Position9') {
+                psix.className = pthree.className;
+                pthree.className = 'Position9';
+            }
+            winGame()
+        }
+
+        function pFour() {
+            if (pone.className == 'Position9') {
+                pone.className = pfour.className;
+                pfour.className = 'Position9';
+            }
+            if (pfive.className == 'Position9') {
+                pfive.className = pfour.className;
+                pfour.className = 'Position9';
+            }
+            if (pseven.className == 'Position9') {
+                pseven.className = pfour.className;
+                pfour.className = 'Position9';
+            }
+            winGame()
+        }
+
+        function pFive() {
+            if (ptwo.className == 'Position9') {
+                ptwo.className = pfive.className;
+                pfive.className = 'Position9';
+            }
+            if (pfour.className == 'Position9') {
+                pfour.className = pfive.className;
+                pfive.className = 'Position9';
+            }
+            if (psix.className == 'Position9') {
+                psix.className = pfive.className;
+                pfive.className = 'Position9';
+            }
+            if (peight.className == 'Position9') {
+                peight.className = pfive.className;
+                pfive.className = 'Position9';
+            }
+            winGame()
+        }
+
+        function pSix() {
+            if (pthree.className == 'Position9') {
+                pthree.className = psix.className;
+                psix.className = 'Position9';
+            }
+            if (pfive.className == 'Position9') {
+                pfive.className = psix.className;
+                psix.className = 'Position9';
+            }
+            if (pnite.className == 'Position9') {
+                pnite.className = psix.className;
+                psix.className = 'Position9';
+            }
+            winGame()
+        }
+
+        function pSeven() {
+            if (pfour.className == 'Position9') {
+                pfour.className = pseven.className;
+                pseven.className = 'Position9';
+            }
+            if (peight.className == 'Position9') {
+                peight.className = pseven.className;
+                pseven.className = 'Position9';
+            }
+
+            winGame()
+        }
+
+        function pEight() {
+            if (pseven.className == 'Position9') {
+                pseven.className = peight.className;
+                peight.className = 'Position9';
+            }
+            if (pfive.className == 'Position9') {
+                pfive.className = peight.className;
+                peight.className = 'Position9';
+            }
+            if (pnite.className == 'Position9') {
+                pnite.className = peight.className;
+                peight.className = 'Position9';
+            }
+            winGame()
+        }
+
+        function pNite() {
+            if (psix.className == 'Position9') {
+                psix.className = pnite.className;
+                pnite.className = 'Position9';
+            }
+            if (peight.className == 'Position9') {
+                peight.className = pnite.className;
+                pnite.className = 'Position9';
+            }
+            winGame()
+        }
+
+
+
+    </script>
+
+}
+
+<div class="container bg-dark p-5">
+    <div class="row">
+        <div class="col-md-3 col-12 bg-info text-white">
+            <h1 class="mt-3">。遊戲開始</h1>
+            <!--  <div class="custom-file mt-3">
+                <input type="file" class="custom-file-input" id="customFile">
+                <label class="custom-file-label" for="customFile">選擇您的圖片</label>
+            </div> -->
+            <div class="col col-md">
+                <button class="btn btn-warning w-100 mb-5 mt-5" onclick="puzzleRandom()" id="startBtn">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-clockwise"
+                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                              d="M3.17 6.706a5 5 0 0 1 7.103-3.16.5.5 0 1 0 .454-.892A6 6 0 1 0 13.455 5.5a.5.5 0 0 0-.91.417 5 5 0 1 1-9.375.789z" />
+                        <path fill-rule="evenodd"
+                              d="M8.147.146a.5.5 0 0 1 .707 0l2.5 2.5a.5.5 0 0 1 0 .708l-2.5 2.5a.5.5 0 1 1-.707-.708L10.293 3 8.147.854a.5.5 0 0 1 0-.708z" />
+                    </svg>
+                </button>
+                <!--   <button class="btn btn-warning w-100 mb-5" onclick="startGame()"><svg width="1em" height="1em"
+                        viewBox="0 0 16 16" class="bi bi-play-fill" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
+                    </svg></button> -->
+            </div>
+
+        </div>
+        <div id="imgChange" class="col-md-9 col-12 bg-warning d-flex justify-content-center align-items-center">
+            <div class="row">
+                <div class="col-md col" id="puzzle-area">
+                    <div>
+                        <div id="P11" class="Position1" onclick="pOne()"></div>
+                        <div id="P12" class="Position2" onclick="pTwo()"></div>
+                        <div id="P13" class="Position3" onclick="pThree()"></div>
+                    </div>
+                    <div>
+                        <div id="P21" class="Position4" onclick="pFour()"></div>
+                        <div id="P22" class="Position5" onclick="pFive()"></div>
+                        <div id="P23" class="Position6" onclick="pSix()"></div>
+                    </div>
+                    <div>
+                        <div id="P31" class="Position7" onclick="pSeven()"></div>
+                        <div id="P32" class="Position8" onclick="pEight()"></div>
+                        <div id="P33" class="Position9" onclick="pNite()"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

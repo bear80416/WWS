@@ -2,21 +2,62 @@
     ViewData["Title"] = "Home Page";
 }
 
+ 
+@section TopCss{
+<link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap" rel="stylesheet">
+<style>
+    .page-title h1 {
+    display: none;
+    
+}
+.page-group {
+    margin-top:160px;
+}
+.index-title {
+    font-family: 'Nosifer', cursive;
+    
+}
 
-    <link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap" rel="stylesheet">
-    <style>
+       /*  .index {
+           position: relative;
+           margin: auto;e
+           left: 0;
+           right: 0;
+           top: 0;
+           bottom:0;
+       }*/
+
+       .index-body .row {
+           position: fixed;
+           font-size:100px;
+           color: white;
+           left: 0;
+           right: 0;
+           top: 0;
+           bottom: 0;
+           margin: auto;
+           animation: bounceIn 1s;
+           z-index:1;
+       }
+
+       .index-footer img {
+           width: 40%;
+           -webkit-animation: rotate-scale-up 0.65s linear both;
+           animation: rotate-scale-up 0.65s linear both;
+       }
        
-
-    </style>
+       .fixed-bottom {
+           z-index: 96;
+       }
+</style>
+  }
 
 
 <div class="index container">
     <div class="index-body col-md-12 col">
         <div class="row justify-content-center align-items-center">
-            <img src="https://raw.githubusercontent.com/bear80416/HenryWuCompany/master/HenryWuCompany/Assets/Img/ice-cream/png/006-ice cream.png" />
             <div class="index-title">
                 Henry Wu
-
             </div>
             <div class="index-button">
                 <button class="btn btn-warning ml-2">Profile</button>
@@ -31,4 +72,4 @@
 
     </div>
 </div>
-    <div class="fixed-bottom text-center bg-white"><p>&copy; @DateTime.Now.Year - Ice Cream Shop</p></div>
+    

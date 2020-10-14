@@ -1,0 +1,250 @@
+﻿
+@{ViewData["Title"] = "1A2B | 我猜猜猜"; }
+
+
+@section TopCss{
+<style>
+
+    #history {
+        height: 300px;
+    }
+</style>
+}
+
+@section EndJs{
+<script>
+    let history = document.getElementById('history');
+    let status = document.getElementById('status')
+    var hs = '';
+    let code = [];
+    let over = document.getElementById('over');
+    let step = 10;
+    var turnKey;
+    let a = 0,
+        b;
+    let arr = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
+
+    over.innerHTML = `剩餘步數:${step}`;
+
+    function buyIce(num) {
+        step = step + num;
+        over.innerHTML = `剩餘步數:${step}`;
+    }
+
+    function getRamdon() {
+        arr.sort(function () {
+            return Math.random() - 0.5
+        })
+        arr.length = 4;
+        code = arr;
+        console.log(code);
+        if (code.length >= 1)
+            status.innerHTML = '已取得亂數';
+        hs = '';
+    }
+
+    function verificationCode() {
+        a = 0;
+        b = 0;
+        if (code.length < 3) {
+            status.innerText = '還沒按開始遊戲!'
+        } else {
+            if (step <= 0) {
+                status.innerText = '請購買冰淇淋以繼續遊戲'
+                over.innerText = `購買冰淇淋`;
+            } else {
+                step = step - 1;
+                let playerKey = document.getElementById('keyNum').value;
+                turnKey = Array.from(playerKey);
+                console.log(turnKey);
+                if (playerKey.length > 4 || playerKey.length < 4) {
+                    status.innerHTML = '只能輸入4個數字唷';
+                } else {
+                    deterAns();
+                    if (a == 4) {
+                        status.innerText = '成功!!!!'
+
+                    } else {
+                        hs = hs + `您輸入的數字是${playerKey} | 提示: ${a}A${b}B<br>`;
+                        history.innerHTML = hs;
+                    }
+                }
+            }
+            over.innerHTML = `剩餘步數:${step}`;
+        }
+    }
+
+    function reset() {
+        hs = '';
+        code = '';
+        status.innerText = '遊戲重來'
+        history.innerHTML = hs;
+    }
+
+    function ans() {
+        if (code.length < 3) {
+            status.innerText = '還沒按開始遊戲!'
+        } else {
+            if (step < 50) {
+                status.innerText = '步數不夠，請購買冰淇淋。'
+            } else {
+                step = step - 50;
+                over.innerHTML = `剩餘步數:${step}`;
+                status.innerText = code.join('');
+                //console.log(code.join(''));
+                hs = '';
+                code = '';
+            }
+
+        }
+    }
+
+    function deterAns() {
+
+        var i = $(code).filter(turnKey).toArray();
+        b = i.length;
+        console.log(b);
+        for (let i = 0; i <= 3; i++) {
+            if (code[i] == turnKey[i]) {
+                a = a + 1;
+                b = b - 1;
+            }
+        }
+
+    }
+
+
+
+</script>
+
+}
+<div class="container bg-white p-4">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-3 bg-light rounded">
+            <h1 class="">遊戲說明</h1>
+            <ul>
+                <li>電腦從0~9 亂數挑選4 的不重複的數字，讓使用者猜。</li>
+                <li> 如果玩家猜測的某一個數字和電腦挑選的相同，但順序不同，則以B 表示；若是該數字連順序都相同則以A 表示。
+                <li> 4A及代表遊戲成功結束。</li>
+            </ul>
+            <h2>例如</h2>
+            <ul>
+                <li> 電腦挑出的數字為5461</li>
+                <li> 玩家猜5038，則為1A0B</li>
+                <li> 玩家猜5048，則為1A1B</li>
+                <li> 玩家猜9872，則為0A0B</li>
+            </ul>
+        </div>
+        <div class="col-12 col-md-7 rounded">
+            <div class="col d-flex justify-content-between">
+                <button class="btn btn-dark" onclick="getRamdon()">遊戲開始</button>
+                <button class="btn btn-dark" onclick="reset()">重來</button>
+                <button class="btn btn-dark" onclick="ans()" data-trigger="hover" data-toggle="popover"
+                        data-placement="bottom" data-content="需花費50步">
+                    看答案
+                </button>
+                <button id="over" class="btn btn-danger" data-toggle="modal"
+                        data-target="#exampleModal">
+                    剩餘步數:
+                </button>
+            </div>
+
+            <div class="col mt-4">
+                <label for="keyNum">輸入數字</label>
+                <input class="form-control" type="text" name="" id="keyNum">
+                <button class="btn btn-warning mt-3 w-100" onclick="verificationCode()">驗證</button>
+            </div>
+
+
+            <div class="col mt-3 bg-light rounded">
+                <h1>遊戲歷程</h1>
+                <div class="col" id="status"></div>
+                <div class="col overflow-auto" id="history">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ----------------購買視窗---------------- -->
+
+<div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content border-light">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">斗內冰淇淋</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>冰淇淋</th>
+                            <th>數量</th>
+                            <th>步數</th>
+                            <th>價格(台幣)</th>
+                            <th>斗內我</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img src="https://raw.githubusercontent.com/bear80416/HenryWuCompany/master/HenryWuCompany/Assets/Img/ice-cream/png/005-popsicle.png" alt="" width="30" height="30"></td>
+                            <td>1</td>
+                            <td>+10</td>
+                            <td>$30</td>
+                            <td>
+                                <button type="button" class="btn btn-warning" onclick="buyIce(10)"
+                                        data-dismiss="modal">
+                                    購買
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="https://raw.githubusercontent.com/bear80416/HenryWuCompany/master/HenryWuCompany/Assets/Img/ice-cream/png/005-popsicle.png" alt="" width="30" height="30">
+                                <img src="https://raw.githubusercontent.com/bear80416/HenryWuCompany/master/HenryWuCompany/Assets/Img/ice-cream/png/005-popsicle.png" alt="" width="30" height="30">
+                            </td>
+                            <td>2</td>
+                            <td>+30</td>
+                            <td>$50</td>
+                            <td>
+                                <button type="button" class="btn btn-warning" onclick="buyIce(30)"
+                                        data-dismiss="modal">
+                                    購買
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="https://raw.githubusercontent.com/bear80416/HenryWuCompany/master/HenryWuCompany/Assets/Img/ice-cream/png/005-popsicle.png" alt="" width="30" height="30">
+                                <img src="https://raw.githubusercontent.com/bear80416/HenryWuCompany/master/HenryWuCompany/Assets/Img/ice-cream/png/005-popsicle.png" alt="" width="30" height="30">
+                                <img src="https://raw.githubusercontent.com/bear80416/HenryWuCompany/master/HenryWuCompany/Assets/Img/ice-cream/png/005-popsicle.png" alt="" width="30" height="30">
+                            </td>
+                            <td>3</td>
+                            <td>+50</td>
+                            <td>$70</td>
+                            <td>
+                                <button type="button" class="btn btn-warning" onclick="buyIce(50)"
+                                        data-dismiss="modal">
+                                    購買
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+
+
+
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">不需要</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
