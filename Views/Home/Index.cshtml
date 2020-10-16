@@ -4,7 +4,8 @@
 
  
 @section TopCss{
-<link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap" rel="stylesheet">
 <style>
     .page-title h1 {
     display: none;
@@ -14,18 +15,10 @@
     margin-top:160px;
 }
 .index-title {
-    font-family: 'Nosifer', cursive;
-    
+    font-family: 'Covered By Your Grace', cursive;
+    font-size: 5rem;
 }
 
-       /*  .index {
-           position: relative;
-           margin: auto;e
-           left: 0;
-           right: 0;
-           top: 0;
-           bottom:0;
-       }*/
 
        .index-body .row {
            position: fixed;
@@ -40,11 +33,6 @@
            z-index:1;
        }
 
-       .index-footer img {
-           width: 40%;
-           -webkit-animation: rotate-scale-up 0.65s linear both;
-           animation: rotate-scale-up 0.65s linear both;
-       }
        
        .fixed-bottom {
            z-index: 96;
@@ -60,14 +48,14 @@
                 Henry Wu
             </div>
             <div class="index-button">
-                <button class="btn btn-warning ml-2">Profile</button>
-                <button type="button" class="btn btn-outline-warning ml-2" data-container="body" data-toggle="popover" data-placement="top" data-content="New!JS的新功課">拼圖</button>
+                <a class="btn ml-2">Profile</a>
+                <a href="@Url.ActionLink("Puzzle","Projects")" class="btn btn-outline-light">拼圖</a>
             </div>
         </div>
     </div>
     <div class="index-footer col-md-12 col">
         <div class="row justify-content-center align-items-center">
-            
+          
         </div>
 
     </div>
