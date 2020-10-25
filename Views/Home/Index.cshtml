@@ -1,63 +1,52 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+ViewData["Title"] = "Henry Wu";
 }
 
- 
+
 @section TopCss{
-    
-    <link href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap" rel="stylesheet">
 <style>
-    .page-title h1 {
-    display: none;
-    
-}
-.page-group {
-    margin-top:160px;
-}
-.index-title {
-    font-family: 'Covered By Your Grace', cursive;
-    font-size: 5rem;
-}
+    .layout-footer {
+        display: none;
+
+    }
+
+    .index-title {
+        font-family: 'Covered By Your Grace', cursive;
+        font-size: 5rem;
+
+    }
 
 
-       .index-body .row {
-           position: fixed;
-           font-size:100px;
-           color: white;
-           left: 0;
-           right: 0;
-           top: 0;
-           bottom: 0;
-           margin: auto;
-           animation: bounceIn 1s;
-           z-index:1;
-       }
+    .page-title .row {
+        position: fixed;
+        font-size: 100px;
+        color: white;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        animation: bounceIn 1s;
+        z-index: 1;
+    }
 
-       
-       .fixed-bottom {
-           z-index: 96;
-       }
+
+    .fixed-bottom {
+        z-index: 96;
+    }
 </style>
-  }
+}
 
 
 <div class="index container">
-    <div class="index-body col-md-12 col">
-        <div class="row justify-content-center align-items-center">
-            <div class="index-title">
-                Henry Wu
-            </div>
-            <div class="index-button">
-                <a class="btn ml-2">Profile</a>
-                <a href="@Url.ActionLink("Puzzle","Projects")" class="btn btn-outline-light">拼圖</a>
-            </div>
-        </div>
-    </div>
+
     <div class="index-footer col-md-12 col">
         <div class="row justify-content-center align-items-center">
-          
+
+
         </div>
 
     </div>
 </div>
-    
