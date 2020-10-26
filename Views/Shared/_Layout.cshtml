@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="~/css/Home/Layout.css" />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&display=swap" rel="stylesheet">
+    <script data-ad-client="ca-pub-6251536379764417" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     @RenderSection("TopCss", required: false)
 </head>
 
@@ -74,7 +75,7 @@ alt="linkedin">
                     </a>
                 </li>
                 <li class="list-group-item">
-                    <a href="@Url.ActionLink("index","Blog")" class="text-left">
+                    <a href="@Url.ActionLink("main","Blog")" class="text-left">
                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-journal-text mx-3"
                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -130,7 +131,7 @@ alt="linkedin">
                     @ViewBag.Title
                 </div>
                 <div class="index-button">
-                    <a href="@Url.ActionLink("index","Blog")" class="btn ml-2 text-white">Blog</a>
+                    <a href="@Url.ActionLink("main","Blog")" class="btn ml-2 text-white">Blog</a>
                 </div>
             </div>
         </div>

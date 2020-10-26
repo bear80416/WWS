@@ -8,19 +8,19 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MYSPACE.Controllers
 {
-    public class BlogController : Controller
+    public class AdminController : Controller
     {
 
         private readonly MainContext _context;
 
-        public BlogController(MainContext context)
+        public AdminController(MainContext context)
         {
             _context = context;
         }
 
-        public  async Task<IActionResult> main()
+        public async Task<IActionResult> index()
         {
-            var model = await _context.Blog.ToListAsync();
+            var model = await _context.Admin.ToListAsync();
             return View();
         }
     }
