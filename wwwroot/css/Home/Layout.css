@@ -67,9 +67,10 @@
     animation: bounceIn 1s;
 }
 
-.bbanner {
+/* .bbanner {
     background-color: #abad36;
-}
+    z-index: -2;
+} */
 
 .menu-box .menu {
     position: fixed;

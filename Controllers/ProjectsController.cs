@@ -40,5 +40,10 @@ namespace myspace
         {
             return View();
         }
+
+        public IActionResult LocalFoods()
+        {
+            return View();
+        }
     }
 }

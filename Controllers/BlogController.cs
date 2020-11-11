@@ -18,7 +18,7 @@ namespace MYSPACE.Controllers
             _context = context;
         }
 
-        public  async Task<IActionResult> main()
+        public async Task<IActionResult> main()
         {
             var model = await _context.Blog.ToListAsync();
             return View();

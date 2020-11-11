@@ -1,0 +1,40 @@
+@{
+    ViewData["Title"] = "農村地方美食小吃特色料理";
+}
+
+
+
+<div class="container">
+        <div class="row">
+            <div class="title col-12 col-md-12 col-lg-12 col-xl-12 textCenter">
+                
+            </div>
+            <div class="menu col-12 col-md-12 col-lg-12 col-xl-12 textCenter">
+                <select id="menuCity">
+                    <option value="City" disabled>請選擇城市</option>
+                </select>
+                <select id="menuTown">
+                    <option value="Town">請選擇鄉鎮</option>
+                </select>
+            </div>
+        </div>
+        <div class="row" id="foodsData">
+
+        </div>
+        <div class="row">
+            <div class="ffooter col-12 col-md-12 col-lg-12 col-xl-12 textCenter">
+                <h3>Henry Wu - 練習作品</h3>
+            </div>
+        </div>
+    </div>
+
+    <div id="loading"><img src="../img/foods/preloader.gif" alt=""></div>
+
+    <script src="../js/Projects/foods/foods.js"></script>
+
+
+
+@section TopCss{
+<link rel="stylesheet" href="../css/Projects/foods/foods.css">
+
+}

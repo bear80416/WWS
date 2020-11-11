@@ -3,7 +3,7 @@ var c = 1;
 setInterval("changeImg()", "5000");
 
 function changeImg() {
-    selfie.innerHTML = `<img src="../img/index/${c}.jpg" alt="">`;
+    selfie.innerHTML = `<img src="../img/Index/${c}.jpg" alt="">`;
     c = c + 1;
     if (c == 3) {
         c = c - 2;
